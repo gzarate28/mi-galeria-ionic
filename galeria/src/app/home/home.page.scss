@@ -1,0 +1,126 @@
+
+.barra-superior {
+  --background: #e98fac;
+  --color: white;
+  text-align: center;
+}
+
+.fondo-galeria {
+  --background: #fff5f8;
+}
+
+.contenedor {
+  padding: 22px;
+  max-width: 600px;
+  margin: auto;
+}
+
+.bienvenida {
+  text-align: center;
+  padding: 30px 10px;
+}
+
+.icono-principal {
+  font-size: 55px;
+  margin-bottom: 15px;
+}
+
+.bienvenida h1 {
+  color: #c95780;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.bienvenida p {
+  color: #777;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.tarjeta-seleccion {
+  background: white;
+  border-radius: 22px;
+  padding: 30px 20px;
+  text-align: center;
+  box-shadow: 0 5px 20px rgba(210, 100, 145, 0.12);
+}
+
+.icono-galeria {
+  font-size: 50px;
+  margin-bottom: 12px;
+}
+
+.tarjeta-seleccion h2 {
+  color: #c95780;
+  font-size: 21px;
+}
+
+.tarjeta-seleccion p {
+  color: #888;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.boton-seleccionar {
+  background: #e98fac;
+  color: white;
+  border: none;
+  border-radius: 14px;
+  padding: 16px 25px;
+  margin-top: 18px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  width: 100%;
+  transition: 0.3s;
+}
+
+.boton-seleccionar:hover {
+  background: #d87599;
+}
+
+.boton-seleccionar:active {
+  transform: scale(0.98);
+}
+
+.seccion-fotos {
+  margin-top: 35px;
+}
+
+.seccion-fotos h2 {
+  color: #c95780;
+  font-size: 21px;
+  margin-bottom: 20px;
+}
+
+.galeria-vacia {
+  background: white;
+  border: 2px dashed #efbbce;
+  border-radius: 20px;
+  padding: 35px 20px;
+  text-align: center;
+}
+
+.icono-vacio {
+  font-size: 45px;
+  margin-bottom: 12px;
+}
+
+.galeria-vacia h3 {
+  color: #c95780;
+  font-size: 17px;
+}
+
+.galeria-vacia p {
+  color: #999;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.pie-pagina {
+  margin-top: 40px;
+  text-align: center;
+  color: #aaa;
+  font-size: 11px;
+  padding-bottom: 20px;
+}
