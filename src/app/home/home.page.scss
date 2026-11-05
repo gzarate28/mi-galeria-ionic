@@ -1,0 +1,145 @@
+
+.barra-superior {
+  --background: #f8e8ef;
+  --color: #704456;
+}
+
+.fondo-galeria {
+  --background: #fff8fb;
+}
+
+.contenedor {
+  padding: 20px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.bienvenida {
+  text-align: center;
+  padding: 25px 10px;
+
+  .icono-principal {
+    font-size: 45px;
+    margin-bottom: 10px;
+  }
+
+  h1 {
+    color: #704456;
+    font-size: 25px;
+    font-weight: 700;
+  }
+
+  p {
+    color: #927c88;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+}
+
+.tarjeta-seleccion {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 25px 20px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(112, 68, 86, 0.08);
+  margin-bottom: 30px;
+
+  .icono-galeria {
+    font-size: 40px;
+    margin-bottom: 10px;
+  }
+
+  h2 {
+    color: #704456;
+    font-size: 19px;
+  }
+
+  p {
+    color: #927c88;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+}
+
+.boton-galeria {
+  --background: #c77b9c;
+  --background-hover: #b96889;
+  --background-activated: #a95879;
+  --color: #ffffff;
+  --border-radius: 12px;
+  --box-shadow: none;
+
+  font-weight: 600;
+  margin-top: 18px;
+}
+
+.seccion-fotos {
+  margin-top: 30px;
+
+  h2 {
+    color: #704456;
+    font-size: 21px;
+    font-weight: 700;
+    margin-bottom: 18px;
+  }
+}
+
+.galeria-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.tarjeta-foto {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border-radius: 15px;
+  background: #f2e5eb;
+  box-shadow: 0 3px 10px rgba(112, 68, 86, 0.10);
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+}
+
+.galeria-vacia {
+  text-align: center;
+  padding: 35px 15px;
+  background: #ffffff;
+  border-radius: 18px;
+
+  .icono-vacio {
+    font-size: 40px;
+  }
+
+  h3 {
+    color: #704456;
+    font-size: 17px;
+  }
+
+  p {
+    color: #927c88;
+    font-size: 13px;
+  }
+}
+
+.pie-pagina {
+  text-align: center;
+  margin-top: 40px;
+  padding: 15px;
+
+  p {
+    color: #aa929e;
+    font-size: 11px;
+  }
+}
+
+@media (min-width: 600px) {
+  .galeria-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
