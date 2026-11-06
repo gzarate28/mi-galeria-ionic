@@ -1,0 +1,157 @@
+:host {
+  --ciruela: #573849;
+  --rosa: #bd7895;
+  --rosa-oscuro: #a65e7d;
+  --texto-suave: #927f89;
+  --fondo: #fffafc;
+  display: block;
+}
+
+.barra-superior {
+  --background: rgba(255, 250, 252, 0.96);
+  --color: var(--ciruela);
+  --min-height: 62px;
+  --padding-start: 22px;
+  --padding-end: 22px;
+  border-bottom: 1px solid #f3e8ed;
+
+  ion-title {
+    padding-left: 10px;
+    font-size: 16px;
+    font-weight: 750;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+}
+
+.marca {
+  color: var(--rosa);
+  font-size: 25px;
+}
+
+.contador-header {
+  display: grid;
+  width: 30px;
+  height: 30px;
+  place-items: center;
+  border-radius: 50%;
+  background: #f5e8ee;
+  color: var(--ciruela);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.fondo-galeria { --background: var(--fondo); }
+.contenedor { width: min(100%, 760px); margin: 0 auto; padding: 18px 22px 10px; }
+
+.bienvenida {
+  position: relative;
+  overflow: hidden;
+  padding: 35px 8px 32px;
+
+  .etiqueta, .subtitulo {
+    color: var(--rosa-oscuro);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.19em;
+  }
+
+  h1 {
+    margin: 15px 0 12px;
+    color: var(--ciruela);
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: clamp(36px, 8vw, 48px);
+    font-weight: 500;
+    line-height: 1.08;
+    letter-spacing: -0.045em;
+
+    span { color: var(--rosa); font-style: italic; }
+  }
+
+  p { max-width: 390px; margin: 0; color: var(--texto-suave); font-size: 14px; line-height: 1.75; }
+  .adorno-floral { position: absolute; right: 13px; top: 43px; color: #f0dce5; font-size: 76px; transform: rotate(-15deg); }
+}
+
+.tarjeta-seleccion {
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  gap: 5px 14px;
+  padding: 21px;
+  border: 1px solid #f0e4ea;
+  border-radius: 19px;
+  background: #fff;
+  box-shadow: 0 9px 28px rgba(87, 56, 73, 0.055);
+
+  .icono-galeria { display: grid; width: 46px; height: 46px; place-items: center; border-radius: 14px; background: #f8edf2; color: var(--rosa-oscuro); font-size: 27px; }
+  h2 { margin: 1px 0 5px; color: var(--ciruela); font-size: 16px; font-weight: 750; }
+  p { margin: 0; color: var(--texto-suave); font-size: 12px; line-height: 1.55; }
+  .acciones { grid-column: 1 / -1; display: grid; grid-template-columns: 1fr 1fr; gap: 9px; margin-top: 13px; }
+}
+
+.boton-principal {
+  --background: var(--rosa);
+  --background-activated: var(--rosa-oscuro);
+  --background-hover: var(--rosa-oscuro);
+  --border-radius: 11px;
+  --box-shadow: none;
+  --color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  margin: 0;
+  min-height: 43px;
+}
+
+.boton-secundario {
+  --color: var(--ciruela);
+  --border-radius: 11px;
+  --background: #faf4f7;
+  --background-hover: #f5e8ee;
+  font-size: 12px;
+  font-weight: 700;
+  margin: 0;
+  min-height: 43px;
+}
+
+.boton-icono { margin-right: 6px; font-size: 17px; }
+.mensaje-error { margin-top: 13px; padding: 11px 13px; border-radius: 10px; background: #fff0f0; color: #a33d48; font-size: 12px; }
+
+.seccion-fotos { margin-top: 37px; }
+.encabezado-fotos { display: flex; align-items: end; justify-content: space-between; gap: 10px; margin: 0 2px 17px; }
+.encabezado-fotos h2 { margin: 5px 0 0; color: var(--ciruela); font-family: Georgia, 'Times New Roman', serif; font-size: 27px; font-weight: 600; }
+.cantidad-fotos { padding: 6px 10px; border-radius: 20px; background: #f7edf2; color: #8e6378; font-size: 11px; font-weight: 700; }
+
+.galeria-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 11px; }
+.tarjeta-foto { position: relative; display: block; width: 100%; aspect-ratio: 1; overflow: hidden; padding: 0; border: 0; border-radius: 14px; background: #f2e5eb; box-shadow: 0 4px 13px rgba(87, 56, 73, 0.09); cursor: pointer; }
+.tarjeta-foto img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform 220ms ease; }
+.tarjeta-foto:active img { transform: scale(1.04); }
+.ver-foto { position: absolute; right: 8px; bottom: 8px; display: grid; width: 27px; height: 27px; place-items: center; border-radius: 50%; background: rgba(255,255,255,.9); color: var(--ciruela); font-size: 15px; }
+
+.galeria-vacia { padding: 35px 23px 39px; border: 1px dashed #e8d5df; border-radius: 17px; background: rgba(255,255,255,.7); text-align: center; }
+.ilustracion-vacia { position: relative; display: grid; width: 75px; height: 68px; place-items: center; margin: 0 auto 15px; border-radius: 22px; background: #f9eff4; color: var(--rosa); }
+.icono-vacio { font-size: 34px; }
+.marco-mariposa { position: absolute; top: -10px; right: -6px; color: #d5a4b9; font-size: 25px; }
+.galeria-vacia h3 { margin: 0 0 7px; color: var(--ciruela); font-family: Georgia, 'Times New Roman', serif; font-size: 19px; }
+.galeria-vacia p { max-width: 270px; margin: 0 auto; color: var(--texto-suave); font-size: 12px; line-height: 1.65; }
+
+.pie-pagina { padding: 38px 10px 24px; text-align: center; }
+.pie-flor { color: var(--rosa); font-size: 20px; }
+.pie-pagina p { margin: 7px 0 5px; color: #947f8b; font-family: Georgia, 'Times New Roman', serif; font-size: 13px; font-style: italic; }
+.pie-pagina small { color: #b4a3ac; font-size: 10px; }
+
+.visor-fondo { position: fixed; z-index: 20; inset: 0; display: grid; place-items: center; padding: 22px; background: rgba(35, 23, 30, .88); }
+.visor-contenido { position: relative; width: min(100%, 620px); text-align: center; }
+.visor-contenido img { display: block; max-width: 100%; max-height: 72vh; margin: 0 auto; border-radius: 12px; object-fit: contain; }
+.cerrar-visor { position: absolute; z-index: 1; top: -43px; right: 0; width: 35px; height: 35px; border: 0; border-radius: 50%; background: #fff; color: var(--ciruela); font-size: 25px; cursor: pointer; }
+.boton-eliminar { --color: #fff; margin-top: 12px; font-size: 12px; }
+
+@media (min-width: 600px) {
+  .contenedor { padding-right: 30px; padding-left: 30px; }
+  .galeria-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 15px; }
+  .bienvenida { padding-top: 48px; padding-bottom: 40px; }
+}
+
+@media (max-width: 360px) {
+  .contenedor { padding-right: 15px; padding-left: 15px; }
+  .tarjeta-seleccion { padding: 16px; }
+  .tarjeta-seleccion .acciones { grid-template-columns: 1fr; }
+}

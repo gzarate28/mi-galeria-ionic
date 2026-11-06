@@ -1,0 +1,86 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar class="barra-superior">
+    <div class="marca" slot="start" aria-hidden="true">✿</div>
+    <ion-title>Mi galería</ion-title>
+    <div class="contador-header" slot="end">{{ cantidadFotos() }}</div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="fondo-galeria" [fullscreen]="true">
+  <main class="contenedor">
+    <section class="bienvenida">
+      <span class="etiqueta">TUS MOMENTOS FAVORITOS</span>
+      <h1>Un lugar para<br /><span>tus recuerdos.</span></h1>
+      <p>Guardá esos pequeños momentos que merecen quedarse para siempre.</p>
+      <div class="adorno-floral" aria-hidden="true">✿</div>
+    </section>
+
+    <section class="tarjeta-seleccion" aria-label="Agregar fotografías">
+      <div class="icono-galeria" aria-hidden="true">▧</div>
+      <div class="texto-seleccion">
+        <h2>Sumá nuevos recuerdos</h2>
+        <p>Elegí imágenes de tu dispositivo o capturá una nueva.</p>
+      </div>
+      <div class="acciones">
+        <ion-button class="boton-principal" expand="block" (click)="seleccionarImagenes()">
+          <span class="boton-icono">＋</span> Elegir fotografías
+        </ion-button>
+        <ion-button class="boton-secundario" expand="block" fill="clear" (click)="tomarFoto()">
+          <span class="boton-icono">◎</span> Tomar una foto
+        </ion-button>
+      </div>
+    </section>
+
+    @if (galeriaService.mensajeError()) {
+      <div class="mensaje-error" role="alert">{{ galeriaService.mensajeError() }}</div>
+    }
+
+    <section class="seccion-fotos">
+      <div class="encabezado-fotos">
+        <div>
+          <span class="subtitulo">TU COLECCIÓN</span>
+          <h2>Mis fotografías</h2>
+        </div>
+        <span class="cantidad-fotos">{{ cantidadFotos() }} {{ cantidadFotos() === 1 ? 'foto' : 'fotos' }}</span>
+      </div>
+
+      @if (cantidadFotos() === 0) {
+        <div class="galeria-vacia">
+          <div class="ilustracion-vacia" aria-hidden="true">
+            <span class="marco-mariposa">✧</span>
+            <span class="icono-vacio">▧</span>
+          </div>
+          <h3>Tu galería está esperando</h3>
+          <p>Cuando agregues fotografías, aparecerán aquí para que puedas volver a disfrutarlas.</p>
+        </div>
+      } @else {
+        <div class="galeria-grid">
+          @for (foto of galeriaService.fotos(); track foto) {
+            <button class="tarjeta-foto" type="button" (click)="abrirFoto(foto)" [attr.aria-label]="'Ver fotografía'">
+              <img [src]="foto" alt="Fotografía de tu galería" loading="lazy" />
+              <span class="ver-foto" aria-hidden="true">↗</span>
+            </button>
+          }
+        </div>
+      }
+    </section>
+
+    <footer class="pie-pagina">
+      <span class="pie-flor">✿</span>
+      <p>Hecho para guardar momentos especiales</p>
+      <small>Proyecto de Dispositivos Móviles · UAA</small>
+    </footer>
+  </main>
+
+  @if (fotoAmpliada(); as foto) {
+    <div class="visor-fondo" role="dialog" aria-modal="true" aria-label="Fotografía ampliada" (click)="cerrarFoto()">
+      <div class="visor-contenido" (click)="$event.stopPropagation()">
+        <button class="cerrar-visor" type="button" aria-label="Cerrar fotografía" (click)="cerrarFoto()">×</button>
+        <img [src]="foto" alt="Fotografía ampliada" />
+        <ion-button class="boton-eliminar" expand="block" fill="clear" (click)="eliminarFoto(foto)">
+          Eliminar fotografía
+        </ion-button>
+      </div>
+    </div>
+  }
+</ion-content>
